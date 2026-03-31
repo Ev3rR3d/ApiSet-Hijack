@@ -1,0 +1,14 @@
+[package]
+name = "apipriv"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+winapi = { version = "0.3.9", features = ["winnt", "aclapi", "sddl", "accctrl", "winbase"] }
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+panic = "abort"
+codegen-units = 1
